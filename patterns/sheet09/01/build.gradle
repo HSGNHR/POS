@@ -8,7 +8,7 @@
 
 apply plugin: 'application'
 //applicationDefaultJvmArgs = ["-Dgreeting.language=en"]
-mainClassName = 'decorator.Client'
+mainClassName = 'decorator.Start'
 
 //#####################################################
 
@@ -47,7 +47,7 @@ jar {
 
     manifest {
         attributes(
-                    'Main-Class': 'decorator.Client'
+                    'Main-Class': 'decorator.Start'
                 )
         }
     }
