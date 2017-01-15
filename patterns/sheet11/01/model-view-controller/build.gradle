@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'mvc.Start'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+}
+
+repositories {
+    mavenCentral()
+    }
+
+jar {
+    manifest {
+        attributes(
+                    'Main-Class': 'mvc.Start'
+                )
+        baseName 'mvc'
+        version '0.3' 
+        }
+    }
+
