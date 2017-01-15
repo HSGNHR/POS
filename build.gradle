@@ -34,6 +34,14 @@ main {
            srcDirs=['src/main/resources']
       }
     }
+test {
+     java {
+           srcDirs = ['src/test/java']
+     }
+     resources {
+           srcDirs = ['src/test/resources']
+     }
+   }
 }
 
 
@@ -98,3 +106,9 @@ task runCustom(type: JavaExec) {
     args 'appArg1' //arguments to pass to the APPLICATION
 
 }
+
+task wrapper(type: Wrapper) {
+gradleVersion = '3.2.1'
+}
+
+
