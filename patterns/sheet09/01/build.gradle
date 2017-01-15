@@ -58,14 +58,6 @@ compileJava {
 
 }
 
-task runCustom(type: JavaExec) {
-    description 'run application with customized jvm settings and specified arguments.'
-    classpath = sourceSets.main.runtimeClasspath
-    main = 'test.Test'  
-    args 'appArg1' 
-
-}
-
 task wrapper(type: Wrapper) {
 gradleVersion = '3.2.1'
 }
