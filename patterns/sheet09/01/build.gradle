@@ -16,14 +16,6 @@ main {
            srcDirs=['src/main/resources']
       }
     }
-test {
-     java {
-           srcDirs = ['src/test/java']
-     }
-     resources {
-           srcDirs = ['src/test/resources']
-     }
-   }
 }
 
 
@@ -38,28 +30,9 @@ jar {
     }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
 }
 
 repositories {
         mavenCentral()
-    }
-
-javadoc {
-        source = sourceSets.main.allJava
-        title = 'test documentation'
 }
-
-compileJava {
-    options.fork = true
-    //options.forkOptions.setMemoryInitialSize("2G")
-   // options.forkOptions.setMemoryMaximumSize("4g")
-    options.debug = false
-
-}
-
-task wrapper(type: Wrapper) {
-gradleVersion = '3.2.1'
-}
-
 
