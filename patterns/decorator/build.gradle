@@ -1,30 +1,12 @@
-//gradle project build file
-//buildDir=''
-
-//#####################################################
-//apply gradle APPLICATION plugin
-//NOTE: Applying the Application plugin also implicitly applies the Java plugin. The main source set is effectively the “application”.
-//NOTE: Applying the Application plugin also implicitly applies the Distribution plugin. A main distribution is created that packages up the application, including code dependencies and generated start scripts.
-
 apply plugin: 'application'
-//applicationDefaultJvmArgs = ["-Dgreeting.language=en"]
 mainClassName = 'decorator.Client'
 
-//#####################################################
-
-//apply plugin: 'distribution'
-
-//#####################################################
-
-//apply gradle JAVA plugin for this project build
 apply plugin: 'java'
 
-//other project properties
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 archivesBaseName = 'decorator'
 
-//specify project layout e.g. /src/main/...
 sourceSets {
 main {
       java {
@@ -33,82 +15,21 @@ main {
       resources {
            srcDirs=['src/main/resources']
       }
-    }
-test {
-     java {
-           srcDirs = ['src/test/java']
-     }
-     resources {
-           srcDirs = ['src/test/resources']
-     }
-   }
 }
-
-
+}
 jar {
-    archiveName='decorator.jar' //If name not explicitly set,pattern for is[baseName]-[appendix]-[version]-[classifier].[extension]
-    //baseName='test'
-    //appendix='a'
-    //version='0.1' 
-    //classifier='a'
-    //destinationDir
+    archiveName='decorator.jar' 
 
     manifest {
         attributes(
                     'Main-Class': 'decorator.Client'
                 )
         }
-    }
+}
 
 dependencies {
-    testCompile 'junit:junit:4.12'
 }
 
 repositories {
         mavenCentral()
-    }
-
-//##################################################
-//customize standard tasks (javadoc, compileJava)
-
-javadoc {
-        source = sourceSets.main.allJava
-        title = 'test documentation'
 }
-
-compileJava {
-    //enable compilation in a separate daemon process
-    options.fork = true
-    //options.forkOptions.setJvmArgs
-    options.forkOptions.setMemoryInitialSize("2G")
-    options.forkOptions.setMemoryMaximumSize("4g")
-    //enable incremental compilation
-    //options.incremental = true
-    options.debug = false
-    //options.compilerArgs
-
-}
-
-//####################################################
-//specify custom tasks
-
-
-task runCustom(type: JavaExec) {
-    description 'run application with customized jvm settings and specified arguments.'
-    //allJvmArgs  :The full set of arguments to use to launch the JVM for the process.
-    //commandLine :The full command line, including the executable plus its arguments.
-    //debug       :Returns true if debugging is enabled for the process.When enabled,the process is started suspended and listening on port 5005.  
-					//gradle someJavaExecTask --debug-jvm
-    //maxHeapSize :The maximum heap size for the process, if any.
-    //systemProperties :The system properties which will be used for the process.
-    classpath = sourceSets.main.runtimeClasspath //The classpath for executing the main class.
-    main = 'test.Test'  //The fully qualified name of the Main class to be executed.
-    args 'appArg1' //arguments to pass to the APPLICATION
-
-}
-
-task wrapper(type: Wrapper) {
-gradleVersion = '3.2.1'
-}
-
-
