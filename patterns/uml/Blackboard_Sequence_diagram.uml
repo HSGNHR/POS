@@ -3,26 +3,30 @@
 
 'control Controller as C
 participant Controller as C
-participant Blackboard as B
 participant KnowledgeSource1 as KS1
+participant Blackboard as B
 
 ->> C: loop()
 activate C
 
 loop until "changes == false" for all KnowlegdeSources
 
-	C ->> B: inspect()
+	C -> B: inspect()
 	activate B
-	B -->> C: changes: true
+	B --> C: changes: true
 	deactivate B
 
-	C ->> C: nextSource()
+	C -> C: nextSource()
 	activate C
-	C ->> KS1: exec()
+	C -> KS1: exec()
 	activate KS1
-	
+
     KS1 -> B: inspect()
-   deactivate KS1
+    activate B
+    B --> KS1: return changes
+    KS1 -> B: update()
+    deactivate KS1
+    deactivate B
 	
 	deactivate C
 
