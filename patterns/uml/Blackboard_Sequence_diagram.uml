@@ -1,0 +1,31 @@
+@startuml
+!include myStyle.uml
+
+'control Controller as C
+participant Controller as C
+participant Blackboard as B
+participant KnowledgeSource1 as KS1
+
+->> C: loop()
+activate C
+
+loop until "changes == false" for all KnowlegdeSources
+
+	C ->> B: inspect()
+	activate B
+	B -->> C: changes: true
+	deactivate B
+
+	C ->> C: nextSource()
+	activate C
+	C ->> KS1: exec()
+	activate KS1
+	
+    KS1 -> B: inspect()
+   deactivate KS1
+	
+	deactivate C
+
+end
+deactivate C
+@enduml
