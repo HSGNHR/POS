@@ -3,7 +3,11 @@
 
 'control Controller as C
 participant Controller as C
+<<<<<<< HEAD
 participant KnowledgeSource_n as KS1
+=======
+participant KnowledgeSource1 as KS1
+>>>>>>> b015f3856e4d52ca653120c9a09e21666ab5bbf7
 participant Blackboard as B
 
 -> C: loop()
@@ -13,7 +17,11 @@ loop until "changes == false" for all KnowlegdeSources
 
 	C -> B: inspect()
 	activate B
+<<<<<<< HEAD
 	B -->> C: changes
+=======
+	B --> C: changes: true
+>>>>>>> b015f3856e4d52ca653120c9a09e21666ab5bbf7
 	deactivate B
 
 	C -> C: nextSource()
@@ -23,6 +31,7 @@ loop until "changes == false" for all KnowlegdeSources
 
     KS1 -> B: inspect()
     activate B
+<<<<<<< HEAD
     B -->> KS1
     deactivate B
 
@@ -35,6 +44,13 @@ loop until "changes == false" for all KnowlegdeSources
     deactivate KS1
 
 	C <<-- C
+=======
+    B --> KS1: return changes
+    KS1 -> B: update()
+    deactivate KS1
+    deactivate B
+	
+>>>>>>> b015f3856e4d52ca653120c9a09e21666ab5bbf7
 	deactivate C
 
 	|||
