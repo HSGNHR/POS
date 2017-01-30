@@ -1,0 +1,36 @@
+apply plugin: 'application'
+apply plugin: 'java'
+
+mainClassName = 'strategy.Start'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+archivesBaseName = 'strategy'
+
+sourceSets {
+main {
+      java {
+           srcDirs=['src/main/java']
+      }
+      resources {
+           srcDirs=['src/main/resources']
+      }
+    }
+}
+
+jar {
+    archiveName='strategy.jar' 
+
+    manifest {
+        attributes(
+                    'Main-Class': 'strategy.Start'
+                )
+        }
+    }
+
+dependencies {
+}
+
+repositories {
+    mavenCentral()
+}
+
