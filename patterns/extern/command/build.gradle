@@ -1,0 +1,36 @@
+apply plugin: 'application'
+apply plugin: 'java'
+
+mainClassName = 'command.Start'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+archivesBaseName = 'command'
+
+sourceSets {
+main {
+      java {
+           srcDirs=['src/main/java']
+      }
+      resources {
+           srcDirs=['src/main/resources']
+      }
+    }
+}
+
+jar {
+    archiveName='command.jar' 
+
+    manifest {
+        attributes(
+                    'Main-Class': 'command.Start'
+                )
+        }
+    }
+
+dependencies {
+}
+
+repositories {
+    mavenCentral()
+}
+
