@@ -1,0 +1,36 @@
+apply plugin: 'application'
+apply plugin: 'java'
+
+mainClassName = 'iter.Start'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+archivesBaseName = 'iter'
+
+sourceSets {
+main {
+      java {
+           srcDirs=['src/main/java']
+      }
+      resources {
+           srcDirs=['src/main/resources']
+      }
+    }
+}
+
+jar {
+    archiveName='iter.jar' 
+
+    manifest {
+        attributes(
+                    'Main-Class': 'iter.Start'
+                )
+        }
+    }
+
+dependencies {
+}
+
+repositories {
+    mavenCentral()
+}
+
