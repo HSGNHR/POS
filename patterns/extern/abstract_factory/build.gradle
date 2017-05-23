@@ -1,0 +1,36 @@
+apply plugin: 'application'
+apply plugin: 'java'
+
+mainClassName = 'abs_fact.Start'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+archivesBaseName = 'abs_fact'
+
+sourceSets {
+main {
+      java {
+           srcDirs=['src/main/java']
+      }
+      resources {
+           srcDirs=['src/main/resources']
+      }
+    }
+}
+
+jar {
+    archiveName='abs_fact.jar' 
+
+    manifest {
+        attributes(
+                    'Main-Class': 'abs_fact.Start'
+                )
+        }
+    }
+
+dependencies {
+}
+
+repositories {
+    mavenCentral()
+}
+
