@@ -4,7 +4,6 @@ import java.io.FilterInputStream;
 import java.io.IOException;
     
 public class LowerCaseInputStream extends FilterInputStream {
-
         public LowerCaseInputStream(FileInputStream in) {
             super(in);
         }
