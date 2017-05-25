@@ -1,0 +1,36 @@
+apply plugin: 'application'
+apply plugin: 'java'
+
+mainClassName = 'singleton.Start'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+archivesBaseName = 'singleton'
+
+sourceSets {
+main {
+      java {
+           srcDirs=['src/main/java']
+      }
+      resources {
+           srcDirs=['src/main/resources']
+      }
+    }
+}
+
+jar {
+    archiveName='singleton.jar' 
+
+    manifest {
+        attributes(
+                    'Main-Class': 'singleton.Start'
+                )
+        }
+    }
+
+dependencies {
+}
+
+repositories {
+    mavenCentral()
+}
+
