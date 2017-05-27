@@ -1,0 +1,25 @@
+package weather;
+
+public class Display1 implements IObserver {
+  private ISubject subject;
+  private float temperature; 
+  private float humidity;
+  private float pressure;
+
+  public Display1(ISubject subject) {
+    this.subject = subject;
+    subject.addObserver(this);
+  }
+
+  public void update(float temperature, float humidity, float pressure){
+    this.temperature = temperature;
+    this.humidity = humidity;
+    this.pressure = pressure;
+    display();
+  }
+
+  public void display(){
+    System.out.println("Display 1:");
+    System.out.println("temperature: "+ temperature +", humidity: "+ humidity +", pressure: "+ pressure +"\n");
+  }
+}

@@ -1,0 +1,57 @@
+apply plugin: 'application'
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+
+mainClassName = 'observer.Start'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+archivesBaseName = 'observer'
+
+sourceSets {
+main {
+      java {
+           srcDirs=['src/main/java']
+      }
+      resources {
+           srcDirs=['src/main/resources']
+      }
+    }
+}
+
+jar {
+    archiveName='observer.jar' 
+
+    manifest {
+        attributes(
+                    'Main-Class': 'observer.Start'
+                )
+        }
+    }
+
+dependencies {
+}
+
+repositories {
+    mavenCentral()
+}
+
+checkstyle {
+    configFile = file("${project.rootDir}/config/checkstyle.xml")
+    toolVersion = '7.7'
+    showViolations = false
+}
+
+checkstyleTest {
+    enabled = false
+}
+
+tasks.withType(Checkstyle) {
+  reports {
+    xml.enabled false
+    xml.destination rootProject.file("build/reports/checkstyle.xml")
+    html.enabled true
+    html.destination rootProject.file("build/reports/checkstyle.html")
+    //html.stylesheet resources.text.fromFile('config/xsl/checkstyle-noframes.xsl')
+  }
+}
+
