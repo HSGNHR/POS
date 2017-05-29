@@ -1,0 +1,5 @@
+@startuml
+!include myStyle.uml
+Context o-- IStrategy : strategy
+
+@enduml
