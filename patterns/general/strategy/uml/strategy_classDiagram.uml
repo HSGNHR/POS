@@ -1,0 +1,26 @@
+@startuml
+!include style.uml
+
+class Context {
+  - IStrategy strategy
+  + setStrategy(IStrategy strategy) : void
+  + callStrategy() : void
+}
+
+interface IStrategy <<interface>> {
+  + algorithm() : void
+}
+
+class StrategyA {
+  + algorithm() : void
+}
+
+class StrategyB {
+  + algorithm : void
+}
+
+Context o-- IStrategy : strategy
+IStrategy <|.. StrategyA
+IStrategy <|.. StrategyB
+
+@enduml

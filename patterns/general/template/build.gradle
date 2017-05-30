@@ -2,10 +2,10 @@ apply plugin: 'application'
 apply plugin: 'java'
 apply plugin: 'checkstyle'
 
-mainClassName = 'strategy.Client'
+mainClassName = 'template.Client'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-archivesBaseName = 'strategy'
+archivesBaseName = 'template'
 
 sourceSets {
 main {
@@ -19,11 +19,11 @@ main {
 }
 
 jar {
-    archiveName='strategy.jar' 
+    archiveName='template.jar' 
 
     manifest {
         attributes(
-                    'Main-Class': 'strategy.Client'
+                    'Main-Class': 'template.Client'
                 )
         }
     }
@@ -54,3 +54,4 @@ tasks.withType(Checkstyle) {
     //html.stylesheet resources.text.fromFile('config/xsl/checkstyle-noframes.xsl')
   }
 }
+

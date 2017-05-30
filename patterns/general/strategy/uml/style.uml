@@ -1,20 +1,24 @@
-skinparam backgroundcolor transparent
+skinparam backgroundcolor white
 
-skinparam dpi 300
+skinparam dpi 600
 
+skinparam titleBorderRoundBorder 15
+skinparam titleBorderThickness 2
+skinparam titleBorderColor red
+skinparam titleBackgroundColor blue
 
 skinparam classArrowColor black
-skinparam classArrowFontName Arial
+skinparam classArrowFontName FuraMonoForPowerline
 ' skinparam classAttributeFontColor #280000
-skinparam classAttributeFontName Arial
+skinparam classAttributeFontName FuraMonoForPowerline
 skinparam classAttributeIconSize 0
-skinparam classBackgroundColor #FFCD9B/#FFFDD8
-skinparam classBorderColor #99795C 
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #000000 
 skinparam classBorderThickness .8
-skinparam classFontName Arial
-skinparam classFontSize 11
+skinparam classFontName FuraMonoForPowerline
+skinparam classFontSize 13
 skinparam classFontStyle bold
-skinparam classStereotypeFontName ArialNarrow
+skinparam classStereotypeFontName FuraMonoForPowerline
 
 skinparam objectArrowColor black
 skinparam objectArrowFontName Arial
@@ -29,16 +33,17 @@ skinparam objectFontStyle bold
 skinparam objectStereotypeFontName ArialNarrow
 
 skinparam sequence {
-	ArrowColor #424242
-	LifeLineBorderColor #3D6652
-	LifeLineBackgroundColor #C2E3D3
+	ArrowColor #000000
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor #FFFFFF
 	
-	ParticipantBorderColor #3D6652
-	ParticipantBackgroundColor #C2E3D3/#FFFFFF
-	ParticipantFontName Arial
-	ParticipantFontSize 11
-'	ParticipantFontColor #A9DCDF
-	
+	ParticipantBorderColor #000000
+	ParticipantBackgroundColor #FFFFFF
+	ParticipantFontName FuraMonoForPowerline
+	ParticipantFontSize 12
+	ParticipantFontColor #000000
+  ParticipantFontStyle bold	
+
 	ActorBorderColor #424242
 	ActorBackgroundColor #FFF0B4/#FFFFFF
 	ActorFontColor #424242

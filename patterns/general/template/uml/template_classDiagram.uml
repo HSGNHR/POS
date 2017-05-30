@@ -1,0 +1,17 @@
+@startuml
+!include style.uml
+
+abstract class AbstractClass << abstract >> {
+  + templateMethod() : void
+  - operation1() : void
+  # operation2() : void
+  - operation3() : void
+}
+
+class ConcreteClass {
+  # operation2() : void
+}
+
+AbstractClass <|-- ConcreteClass
+
+@enduml

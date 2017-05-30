@@ -1,0 +1,12 @@
+@startuml
+!include style.uml
+
+activate Client
+Client -> ConcreteClass : templateMethod()
+activate ConcreteClass
+ConcreteClass -> ConcreteClass : operation1()
+ConcreteClass -> ConcreteClass : operation2()
+ConcreteClass -> ConcreteClass : operation3()
+Client <-- ConcreteClass : templateMethod()
+deactivate ConcreteClass
+@enduml

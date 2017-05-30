@@ -1,0 +1,31 @@
+@startuml
+!include style.uml
+
+activate Client
+Client -> Context : setStrategy(StrategyA)
+activate Context
+Client <-- Context : setStrategy()
+deactivate Context
+Client -> Context : callStrategy()
+activate Context
+Context -> StrategyA : algorithm()
+activate StrategyA
+Context <-- StrategyA : algortihm()
+deactivate StrategyA
+Client <-- Context : callStrategy()
+deactivate Context
+Client -> Context : setStrategy(StrategyB)
+activate Context
+Client <-- Context : setStrategy()
+deactivate Context
+Client -> Context : callStrategy()
+activate Context
+Context -> StrategyB : algorithm()
+activate StrategyB 
+Context <-- StrategyB : algorithm()
+deactivate StrategyB
+Client <-- Context : callStrategy()
+deactivate Context
+
+
+@enduml
