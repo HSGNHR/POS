@@ -2,11 +2,19 @@
 !include style.uml
 
 activate Client
-Client -> ConcreteClass : templateMethod()
-activate ConcreteClass
-ConcreteClass -> ConcreteClass : operation1()
-ConcreteClass -> ConcreteClass : operation2()
-ConcreteClass -> ConcreteClass : operation3()
-Client <-- ConcreteClass : templateMethod()
-deactivate ConcreteClass
+Client -> ConcreteA : templateMethod()
+activate ConcreteA
+ConcreteA -> ConcreteA : operation1()
+ConcreteA -> ConcreteA : operation2()
+ConcreteA -> ConcreteA : operation3()
+Client <-- ConcreteA : templateMethod()
+deactivate ConcreteA
+Client -> ConcreteB : templateMethod()
+activate ConcreteB
+ConcreteB -> ConcreteB : operation1()
+ConcreteB -> ConcreteB : operation2()
+ConcreteB -> ConcreteB : operation3()
+Client <-- ConcreteB : templateMethod()
+deactivate ConcreteB
+
 @enduml

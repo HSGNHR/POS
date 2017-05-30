@@ -1,6 +1,6 @@
 package template;
 
-public abstract class AbstractClass {
+public abstract class ATemplate {
 
   /**
    * template Method containing a final order of operations.
