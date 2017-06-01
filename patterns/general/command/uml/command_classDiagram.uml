@@ -1,0 +1,33 @@
+@startuml
+!include style.uml
+
+class Invoker {
+  - ICommand command
+  + setCommand(ICommand command) : void
+  + activate() : void
+}
+
+interface ICommand << interface >> {
+  + execute() : void
+}
+
+class CommandA {
+  + execute() : void
+}
+
+class CommandB {
+  + execute() : void
+}
+
+class Receiver {
+  + action1()
+  + action2()
+}
+
+Invoker o-- ICommand
+ICommand <|.. CommandA
+ICommand <|.. CommandB
+CommandA --> Receiver
+CommandB --> Receiver
+
+@enduml

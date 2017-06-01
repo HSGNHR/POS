@@ -1,0 +1,80 @@
+skinparam backgroundcolor white
+
+skinparam dpi 600
+
+skinparam titleBorderRoundBorder 15
+skinparam titleBorderThickness 2
+skinparam titleBorderColor red
+skinparam titleBackgroundColor blue
+
+skinparam classArrowColor black
+skinparam classArrowFontName FuraMonoForPowerline
+' skinparam classAttributeFontColor #280000
+skinparam classAttributeFontName FuraMonoForPowerline
+skinparam classAttributeIconSize 0
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #000000 
+skinparam classBorderThickness .8
+skinparam classFontName FuraMonoForPowerline
+skinparam classFontSize 13
+skinparam classFontStyle bold
+skinparam classStereotypeFontName FuraMonoForPowerline
+
+skinparam objectArrowColor black
+skinparam objectArrowFontName Arial
+' skinparam objectAttributeFontColor #280000
+skinparam objectAttributeFontName Arial
+skinparam objectBackgroundColor #FFF0B4/#FFFFFF
+skinparam objectBorderColor #99795C 
+skinparam objectBorderThickness .8
+skinparam objectFontName Arial
+skinparam objectFontSize 11
+skinparam objectFontStyle bold
+skinparam objectStereotypeFontName ArialNarrow
+
+skinparam sequence {
+	ArrowColor #000000
+	LifeLineBorderColor #000000
+	LifeLineBackgroundColor #FFFFFF
+	
+	ParticipantBorderColor #000000
+	ParticipantBackgroundColor #FFFFFF
+	ParticipantFontName FuraMonoForPowerline
+	ParticipantFontSize 12
+	ParticipantFontColor #000000
+  ParticipantFontStyle bold	
+
+	ActorBorderColor #424242
+	ActorBackgroundColor #FFF0B4/#FFFFFF
+	ActorFontColor #424242
+	ActorFontSize 11
+	ActorFontName Arial
+
+'	ArrowFontColor
+	ArrowFontSize 11
+'	ArrowFontStyle
+	ArrowFontName Arial
+	GroupingBorderThickness .1
+'	GroupingFontColor
+	GroupingFontSize 11
+	GroupingFontStyle plain
+	GroupingFontName Arial
+'	GroupingHeaderFontColor
+	GroupingHeaderFontSize 11
+	GroupingHeaderFontStyle plain
+	GroupingHeaderFontName Arial
+}
+
+skinparam noteFontColor black
+skinparam noteFontSize 9
+' skinparam noteFontStyle
+skinparam noteFontName Arial
+skinparam noteBackgroundColor #EEEEEE
+skinparam noteBorderColor #000000
+
+' hide empty members
+' hide empty attributes
+hide empty methods
+hide footbox
+hide circle
+

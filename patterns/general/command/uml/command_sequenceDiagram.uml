@@ -1,0 +1,21 @@
+@startuml
+!include style.uml
+
+activate Client
+Client -> Invoker : setCommand(command)
+activate Invoker
+Client <-- Invoker : setCommand()
+deactivate Invoker
+Client -> Invoker : activate()
+activate Invoker
+Invoker -> Command : execute()
+activate Command
+Command -> Receiver : action()
+activate Receiver
+Command <-- Receiver : action()
+deactivate Receiver
+Invoker <-- Command : execute()
+deactivate Command
+Client <-- Invoker : activate()
+
+@enduml
