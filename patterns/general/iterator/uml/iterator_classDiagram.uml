@@ -1,0 +1,42 @@
+@startuml
+!include style.uml
+
+interface IAggregate << interface >> {
+  + createIterator() : void
+}
+
+class AggregateA {
+  - MAX : int   
+  - position : int
+  - elements : Element[] 
+  + createIterator() : IIterator
+  + add(element : Element) : void
+}
+
+class Element {
+  + operation() : void
+}
+
+interface IIterator << interface >> {
+  + hasNext() : boolean
+  + next() : Object
+}
+
+class IteratorA {
+  + position : int
+  + elements : Element[]
+  + hasNext() : boolean
+  + next() : Element
+}
+
+class Client
+
+Client --> IIterator
+Client --> IAggregate
+IAggregate <|.. AggregateA
+AggregateA o-- "*" Element
+AggregateA ..> IteratorA : <<creates>>
+AggregateA <-- IteratorA
+IIterator <|.. IteratorA
+
+@enduml

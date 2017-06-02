@@ -1,0 +1,25 @@
+@startuml
+!include style.uml
+
+activate Client
+Client -> AggregateA : createIterator()
+activate AggregateA
+AggregateA --> IteratorA : <<create>>
+Client <-- AggregateA : createIterator()
+deactivate AggregateA
+loop
+ Client -> IteratorA : hasNext()
+ activate IteratorA
+ Client <-- IteratorA : hasNext()
+ deactivate IteratorA
+ Client -> IteratorA : next() 
+ activate IteratorA
+ Client <-- IteratorA : next()
+ deactivate IteratorA
+ Client -> Element : operation()
+ activate Element
+ Client <-- Element : operation()
+ deactivate Element
+end
+
+@enduml
