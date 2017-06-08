@@ -1,0 +1,45 @@
+@startuml
+!include style.uml
+
+activate Client
+Client -> "c1:Composite" : add(l1)
+activate "c1:Composite"
+Client <-- "c1:Composite"
+deactivate "c1:Composite"
+Client -> "c1:Composite" : add(l2)
+activate "c1:Composite"
+Client <-- "c1:Composite"
+deactivate "c1:Composite"
+Client -> "c1:Composite" : add(c2)
+activate "c1:Composite"
+Client <-- "c1:Composite"
+deactivate "c1:Composite"
+Client -> "c2:Composite" : add(l3)
+activate "c2:Composite"
+Client <-- "c2:Composite"
+deactivate "c2:Composite"
+
+Client -> "c1:Composite" : operation()
+activate "c1:Composite"
+"c1:Composite" -> "l1:Composite" : operation()
+activate "l1:Composite"
+"c1:Composite" <-- "l1:Composite"
+deactivate "l1:Composite"
+"c1:Composite" -> "l2:Composite" : operation()
+activate "l2:Composite"
+"c1:Composite" <-- "l2:Composite"
+deactivate "l2:Composite"
+
+"c1:Composite" -> "c2:Composite" : operation()
+activate "c2:Composite"
+"c2:Composite" -> "l3:Composite" : operation()
+activate "l3:Composite"
+"c2:Composite" <-- "l3:Composite"
+deactivate "l3:Composite" 
+"c1:Composite" <-- "c2:Composite" 
+deactivate "c2:Composite"
+
+Client <-- "c1:Composite"
+deactivate "c1:Composite"
+@enduml
+

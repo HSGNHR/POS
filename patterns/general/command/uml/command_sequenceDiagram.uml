@@ -1,7 +1,13 @@
 @startuml
 !include style.uml
+create Client
+create Invoker
+create Command
+create Receiver
 
 activate Client
+create Command
+Client --> Command : new Command(receiver)
 Client -> Invoker : setCommand(command)
 activate Invoker
 Client <-- Invoker : setCommand()

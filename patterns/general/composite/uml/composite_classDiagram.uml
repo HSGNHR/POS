@@ -1,0 +1,31 @@
+@startuml
+!include style.uml
+
+class Client
+
+abstract class AComponent << abstract >> {
+  + children : ArrayList<AComponent>
+  # operation() : void 
+  + add(component : AComponent) : void
+  + remove(component : AComponent) : void
+  + getChild() : void
+}
+
+class Composite {
+  + children : ArrayList<AComponent>
+  + operation() : void
+  + add(component : AComponent) : void
+  + remove(component : AComponent) : void
+  + getChild() : void
+}
+
+class Leaf {
+  + operation() : void 
+}
+
+Client ..> AComponent : <<uses>>
+AComponent <|-- Leaf
+AComponent <|-- Composite 
+Composite o-- "*" AComponent
+
+@enduml

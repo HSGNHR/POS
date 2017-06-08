@@ -2,7 +2,7 @@ package command;
 
 public class Client {
   /**
-   * generic command pattern implementation.class
+   * generic command pattern implementation.
    */
   public static void main(String[] args) {
     Receiver receiver = new Receiver();

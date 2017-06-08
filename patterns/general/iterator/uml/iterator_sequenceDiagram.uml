@@ -4,6 +4,7 @@
 activate Client
 Client -> AggregateA : createIterator()
 activate AggregateA
+Create IteratorA
 AggregateA --> IteratorA : <<create>>
 Client <-- AggregateA : createIterator()
 deactivate AggregateA
