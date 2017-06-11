@@ -2,7 +2,7 @@ apply plugin: 'application'
 apply plugin: 'java'
 apply plugin: 'checkstyle'
 
-mainClassName = 'observer.Start'
+mainClassName = 'observer.Client'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 archivesBaseName = 'observer'
@@ -23,7 +23,7 @@ jar {
 
     manifest {
         attributes(
-                    'Main-Class': 'observer.Start'
+                    'Main-Class': 'observer.Client'
                 )
         }
     }
@@ -36,7 +36,7 @@ repositories {
 }
 
 checkstyle {
-    configFile = file("${project.rootDir}/config/checkstyle.xml")
+    configFile = file("${project.rootDir}/config/checks.google.xml")
     toolVersion = '7.7'
     showViolations = false
 }
