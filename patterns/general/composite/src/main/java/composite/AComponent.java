@@ -2,7 +2,7 @@ package composite;
 
 public abstract class AComponent {
 
-  public abstract void operation();
+  protected abstract void operation();
   
   public void add(AComponent component) {
     System.out.println("Child method not implemented.");

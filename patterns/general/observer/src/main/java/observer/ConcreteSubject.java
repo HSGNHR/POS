@@ -3,7 +3,7 @@ package observer;
 import java.util.ArrayList;
 
 public class ConcreteSubject implements ISubject {
-  String state;
+  private String state;
   ArrayList<IObserver> observerlist = new ArrayList<IObserver>();
 
   public void addObserver(IObserver observer) {
@@ -14,7 +14,7 @@ public class ConcreteSubject implements ISubject {
     observerlist.remove(observer);
   }
 
-  public void notifyObservers() {
+  private void notifyObservers() {
     for(IObserver observer : observerlist){
       observer.update(state);
     }

@@ -7,7 +7,7 @@ public class Composite extends AComponent {
   /**
    * delegate operation to every child.
    */
-  public void operation() {
+  protected void operation() {
     Iterator<AComponent> iterator = children.iterator();
     while(iterator.hasNext()){
       AComponent child = (AComponent) iterator.next();
