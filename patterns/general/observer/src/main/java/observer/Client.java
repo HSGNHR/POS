@@ -1,6 +1,6 @@
 package observer;
 
-public class Start {
+public class Client {
   public static void main(String[] args) {
 
   }

@@ -2,11 +2,12 @@ package decorator;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class Start {
 
     public static void main(String args[]){
-        LowerCaseInputStream is = null;
+        InputStream is = null;
         try {
             is = new LowerCaseInputStream(new FileInputStream("test.txt"));
             int content;

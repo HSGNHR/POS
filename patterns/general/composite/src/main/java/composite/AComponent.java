@@ -1,10 +1,6 @@
 package composite;
 
-import java.util.ArrayList;
-
 public abstract class AComponent {
-
-  ArrayList<AComponent> children = new ArrayList<AComponent>();
 
   public abstract void operation();
   

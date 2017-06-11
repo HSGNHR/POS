@@ -1,13 +1,15 @@
 package composite;
 
 import java.util.Iterator;
-
+import java.util.ArrayList;
 public class Composite extends AComponent {
+  ArrayList<AComponent> children = new ArrayList<AComponent>();
   /**
    * delegate operation to every child.
    */
   public void operation() {
-    for (Iterator<AComponent> iterator = children.iterator(); iterator.hasNext();) {
+    Iterator<AComponent> iterator = children.iterator();
+    while(iterator.hasNext()){
       AComponent child = (AComponent) iterator.next();
       child.operation();
     }
@@ -22,13 +24,14 @@ public class Composite extends AComponent {
    */
   public void remove(AComponent component) {
     //iterate through all children
-    for (Iterator<AComponent> iterator = children.iterator(); iterator.hasNext();) {
+    Iterator<AComponent> iterator = children.iterator();
+    while(iterator.hasNext()){
       AComponent child = (AComponent) iterator.next();
       if (child instanceof Composite) {
         ((Composite) child).remove(component);
       }
     }
     //this is the ArrayList remove
-    children.remove(component);
+    this.children.remove(component);
   }
 }
